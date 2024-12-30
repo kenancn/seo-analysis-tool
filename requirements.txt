@@ -1,0 +1,11 @@
+streamlit==1.31.1
+pandas==2.2.0
+requests==2.31.0
+beautifulsoup4==4.12.3
+plotly==5.18.0
+google-generativeai==0.3.2
+python-dotenv==1.0.1
+selenium==4.18.1
+webdriver-manager==4.0.1
+urllib3==2.2.1
+cufflinks==0.17.3 
