@@ -116,7 +116,7 @@ This tool requires the following API keys:
 
 ## 🌐 Live Demo
 
-Access the live version of the application [here](-).
+Access the live version of the application [here](https://seo-analysis-tool.streamlit.app/)
 
 
 ## 📈 Sample Analysis
