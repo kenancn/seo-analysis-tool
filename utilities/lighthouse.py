@@ -58,7 +58,7 @@ def get_lighthouse(target_url: str) -> Tuple[Optional[str], Optional[str]]:
         # Navigate to PageSpeed Insights
         encoded_url = f"https://pagespeed.web.dev/analysis?url={target_url}"
         driver.get(encoded_url)
-
+        time.sleep(20)
         # Wait for the report to load
         WebDriverWait(driver, 60).until(
             EC.presence_of_element_located((By.CLASS_NAME, "lh-report"))
@@ -66,7 +66,6 @@ def get_lighthouse(target_url: str) -> Tuple[Optional[str], Optional[str]]:
         time.sleep(2)
         # Get mobile report
         report_text = driver.find_element(By.TAG_NAME, "body").text
-        driver.save_screenshot("lighthouse_mobile.png")
         # Switch to desktop
         desktop_tab = WebDriverWait(driver, 20).until(
             EC.element_to_be_clickable((By.ID, "desktop_tab"))
@@ -86,7 +85,6 @@ def get_lighthouse(target_url: str) -> Tuple[Optional[str], Optional[str]]:
 
         # Get desktop report
         desktop_report_text = driver.find_element(By.TAG_NAME, "body").text
-        driver.save_screenshot("lighthouse_desktop.png")
         return report_text, desktop_report_text
 
     finally:
