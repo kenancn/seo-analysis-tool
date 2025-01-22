@@ -153,6 +153,7 @@ if st.button("Start Analysis", type="primary"):
         with st.spinner("Analysis in progress... This may take a few minutes."):
             try:
                 # Get competitor URL
+                article_url = article_url.strip()
                 competitor_url = get_top_competitor(keyword, article_url.split('/')[2])
                 
                 # Create tabs for different sections using constants

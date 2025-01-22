@@ -71,15 +71,15 @@ def get_lighthouse(target_url: str) -> Tuple[Optional[str], Optional[str]]:
             EC.element_to_be_clickable((By.ID, "desktop_tab"))
         )
         driver.execute_script("arguments[0].scrollIntoView(true);", desktop_tab)
-        time.sleep(1)
+        time.sleep(2)
 
         # Click desktop ta
         actions = ActionChains(driver)
         actions.move_to_element(desktop_tab).click().perform()
-        time.sleep(2)
+        time.sleep(3)
 
         # Wait for desktop report
-        WebDriverWait(driver, 20).until(
+        WebDriverWait(driver, 30).until(
             lambda driver: driver.find_element(By.CLASS_NAME, "lh-report").text != report_text
         )
 
